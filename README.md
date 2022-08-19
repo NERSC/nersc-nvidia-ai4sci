@@ -12,16 +12,20 @@ Once logged into the hub, start a session by clicking the button for **Perlmutte
 ```
 Account: ntrain1
 Constraint: gpu
-QOS: jupyter
+QOS: gpu_ss11
 cpus-per-task: 128
 gpus-per-task: 4
 nodes: 1
 ntasks-per-node: 1
-Reservation: ai4sci
+Reservation: ai4sci (but see note below)
 time: 180
 ```
 
-Note that the `ai4sci` reservation for this event expires at 12:30 PT each day; if you request a time limit that would make your job run beyond the end of the reservation, your GPU node will not start. Once your GPU node has been allocated, you can run the setup steps below and start using the bootcamp materials.
+Notes:
+- We have two separate compute reservations for each day of the event. On day 1, please use `ai4sci` as the `Reservation` in confiuring the GPU Node. On Day 2, please use `ai4sci_2` as the `Reservation`.
+- The reservations for the event expire at 12:30 PT each day; if you request a time limit that would make your job run beyond the end of the reservation, your GPU node will not start.
+
+Once your GPU node has been allocated, you can run the setup steps below and start using the bootcamp materials.
 
 ## Running bootcamp materials
 
