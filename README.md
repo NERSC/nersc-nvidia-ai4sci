@@ -5,32 +5,15 @@ All tutorial content comes from the [Open Hackathons GPU bootcamp repository](ht
 
 ## Accessing Perlmutter
 
-To activate your training account, visit [iris.nersc.gov/train](https://iris.nersc.gov/train) and fill in the training account request form. The access code for this event will be given out in the presentations and posted on the event's Slack channel.
-Once you have your provided account credentials, you can log in to the NERSC JupyterHub via [jupyter.nersc.gov](https://jupyter.nersc.gov) (leave the OTP field blank when logging into JupyterHub).
-
-Once logged into the hub, start a session by clicking the button for **Perlmutter Configurable GPU Node** (other options will not be able to use the compute reservation for this event). Use the following options when configuring the GPU node:
-```
-Account: ntrain1
-Constraint: gpu
-QOS: gpu_ss11
-cpus-per-task: 128
-gpus-per-task: 4
-nodes: 1
-ntasks-per-node: 1
-Reservation: ai4sci (but see note below)
-time: 180
-```
-
-Notes:
-- We have two separate compute reservations for each day of the event. On day 1, please use `ai4sci` as the `Reservation` in confiuring the GPU Node. On Day 2, please use `ai4sci_2` as the `Reservation`.
-- The reservations for the event expire at 12:30 PT each day; if you request a time limit that would make your job run beyond the end of the reservation, your GPU node will not start.
-
+These notebooks can be run in NERSC JupyterHub via [jupyter.nersc.gov](https://jupyter.nersc.gov).
+Once logged into the hub, start a session by clicking the button for **Perlmutter Exclusive GPU Node**. 
 Once your GPU node has been allocated, you can run the setup steps below and start using the bootcamp materials.
 
 ## Running bootcamp materials
 
 To begin, start a terminal from JupyterHub and clone this repository with:
 ```bash
+cd $SCRATCH
 git clone https://github.com/NERSC/nersc-nvidia-ai4sci.git
 cd nersc-nvidia-ai4sci
 ```
@@ -47,4 +30,4 @@ Tropical_Cyclone_Intensity_Estimation
 CFD
 ```
 
-You can use the Jupyter file browser to view the source files and notebooks. If you get lost, you can always click on the `$HOME` folder shortcut to return to your home directory. To begin, simply open the `Start_Here.ipynb` notebook included in this repository. All notebooks contain relative links to each other for easy navigation between different parts of the bootcamp.
+You can use the Jupyter file browser to view the source files and notebooks. If you get lost, you can always click on the `$SCRATCH` folder shortcut to return to your scratch directory. To begin, simply open the `Start_Here.ipynb` notebook included in this repository. All notebooks contain relative links to each other for easy navigation between different parts of the bootcamp.
